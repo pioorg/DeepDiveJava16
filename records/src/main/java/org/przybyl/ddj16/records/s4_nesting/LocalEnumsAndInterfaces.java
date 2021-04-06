@@ -16,7 +16,7 @@ public class LocalEnumsAndInterfaces {
 		}
 //	these work in Java 16, but your IDE might complain ;-)
 
-/*		
+/*
 		enum LocalEnum {
 			SINGLE;
 

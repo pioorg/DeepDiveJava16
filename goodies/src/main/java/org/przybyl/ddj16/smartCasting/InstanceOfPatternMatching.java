@@ -32,9 +32,9 @@ public class InstanceOfPatternMatching {
 
 		System.out.printf("Is 12 a non empty String? %b%n", nonEmptyString(12));
 		System.out.printf("""
- 		Is "12" a non empty String? %b%n""", nonEmptyString("12"));
+         Is "12" a non empty String? %b%n""", nonEmptyString("12"));
 		System.out.printf("""
- 		Is "" a non empty String? %b%n""", nonEmptyString(""));
+         Is "" a non empty String? %b%n""", nonEmptyString(""));
 	}
 
 	public static void whoAreYou(Object obj) {
