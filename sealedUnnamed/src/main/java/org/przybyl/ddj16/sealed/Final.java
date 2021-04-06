@@ -16,7 +16,7 @@
  */
 package org.przybyl.ddj16.sealed;
 
-import java.util.stream.*;
+import java.util.stream.Stream;
 
 final public class Final implements Sealed {
 	public static void main(String[] args) {
@@ -30,7 +30,9 @@ final public class Final implements Sealed {
 
 	private static void examineSealsOf(Class<?> aClass) {
 		System.out.printf("Is %s a sealed type? [%s]%n", aClass.getCanonicalName(), aClass.isSealed());
-		Stream.of(aClass.permittedSubclasses()).map(cd -> cd.packageName() + "." + cd.displayName()).forEach(System.out::println);
+		if (aClass.isSealed()) {
+			Stream.of(aClass.getPermittedSubclasses()).map(Class::getName).forEach(System.out::println);
+		}
 	}
 
 	public int finalMethod() {

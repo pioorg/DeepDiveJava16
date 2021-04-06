@@ -33,7 +33,9 @@ final public class Final implements Sealed {
 
 	private static void examineSealsOf(Class<?> aClass) {
 		System.out.printf("Is %s a sealed type? [%s]%n", aClass.getCanonicalName(), aClass.isSealed());
-		Stream.of(aClass.permittedSubclasses()).map(cd -> cd.packageName() + "." + cd.displayName()).forEach(System.out::println);
+		if (aClass.isSealed()) {
+			Stream.of(aClass.getPermittedSubclasses()).map(cd -> cd.getPackageName() + "." + cd.getName()).forEach(System.out::println);
+		}
 	}
 
 	public int finalMethod() {
