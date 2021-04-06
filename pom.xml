@@ -21,6 +21,9 @@
           <compilerArgs>
             <compilerArg>--enable-preview</compilerArg>
             <!--<compilerArg>-Xlint:preview</compilerArg>-->
+            <!--<compilerArg>-Xlint:removal</compilerArg>-->
+            <!--<compilerArg>-Xlint:synchronization</compilerArg>-->
+            <compilerArg>-Xlint:all</compilerArg>
             <compilerArg>--add-modules</compilerArg>
             <compilerArg>jdk.incubator.foreign</compilerArg>
           </compilerArgs>
