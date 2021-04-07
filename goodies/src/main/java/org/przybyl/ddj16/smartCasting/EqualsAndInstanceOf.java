@@ -25,7 +25,7 @@ import java.util.*;
 // This code is intentionally implemented badly.
 // Violating LSP, implementing equals using "pattern matching instance of" badly does not make the code immune.
 // And please stop saying "inheritance is bad". It is not bad itself, it is used badly. Difference.
-// https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)
+// https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)
 // https://en.wikipedia.org/wiki/Liskov_substitution_principle
 public class EqualsAndInstanceOf {
 
