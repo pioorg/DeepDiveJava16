@@ -17,9 +17,6 @@
 
 package org.przybyl.ddj16.records.s4_nesting;
 
-/**
- * Created by Piotr Przybył (piotr@przybyl.org) on 2020-03-09.
- */
 class EnclosingClass {
 	private final int field;
 

@@ -60,3 +60,20 @@ record ConstructorsNeedTheSameVisibility(int aComponent) {
 		this(custom.hashCode());
 	}
 }
+
+record CompactConstructorsCannotAssignFields(int aComponent) {
+	CompactConstructorsCannotAssignFields {
+//		this.aComponent = 12;
+	}
+}
+
+record FullConstructorsMustHaveTheSameParameterNamesAsComponents(int fooBAR, String p4ssw0rd) {
+//	FullConstructorsMustHaveTheSameParameterNamesAsComponents(int fooBar, String p4ssw0rd) {
+//		this.fooBAR = fooBar;
+//		this.p4ssw0rd = p4ssw0rd;
+//	}
+}
+
+final
+// abstract
+record RecordsCannotBeAbstractAndAreImplicitlyFinal() {}
