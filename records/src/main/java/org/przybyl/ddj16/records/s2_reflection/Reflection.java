@@ -40,7 +40,7 @@ public class Reflection {
 
 	private static void investigateRecordComponent(RecordComponent rc, Record r) {
 		var value = getValueByReflection(rc, r);
-		System.out.println("The component %s is of type %s and belongs to record %s and has value [%s].".formatted(rc.getName(), rc.getType().getCanonicalName(), rc.getDeclaringRecord().getCanonicalName(), value));
+		System.out.printf("The component %s is of type %s and belongs to record %s and has value [%s].%n", rc.getName(), rc.getType().getCanonicalName(), rc.getDeclaringRecord().getCanonicalName(), value);
 	}
 
 	private static Object getValueByReflection(RecordComponent rc, Record r) {
@@ -55,9 +55,9 @@ public class Reflection {
 	private static void describeBeanProperties(Object object) throws IntrospectionException {
 		BeanInfo beanInfo = Introspector.getBeanInfo(object.getClass());
 
-		System.out.println("Properties from BeanInfo for [%s] - START".formatted(object.getClass().getCanonicalName()));
+		System.out.printf("%nProperties from BeanInfo for [%s] - START%n", object.getClass().getCanonicalName());
 		Stream.of(beanInfo.getPropertyDescriptors()).forEach(System.out::println);
-		System.out.println("Properties from BeanInfo for [%s] - STOP".formatted(object.getClass().getCanonicalName()));
+		System.out.printf("Properties from BeanInfo for [%s] - STOP%n%n", object.getClass().getCanonicalName());
 	}
 }
 
