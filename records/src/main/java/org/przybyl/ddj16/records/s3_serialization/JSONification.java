@@ -24,13 +24,13 @@ public class JSONification {
 	public static void main(String[] args) throws JsonProcessingException {
 		var mapper = new ObjectMapper();
 
-		String bean = mapper.writeValueAsString(new SerializationBeanCheck("Bean"));
-		System.out.println(mapper.readValue(bean, SerializationBeanCheck.class));
-		System.out.println(bean);
-
-		String record = mapper.writeValueAsString(new SerializationRecordCheck("Record"));
-		System.out.println(mapper.readValue(record, SerializationRecordCheck.class));
-		System.out.println(record);
+//		String bean = mapper.writeValueAsString(new SerializationBeanCheck("Bean"));
+//		System.out.println(mapper.readValue(bean, SerializationBeanCheck.class));
+//		System.out.println(bean);
+//
+//		String record = mapper.writeValueAsString(new SerializationRecordCheck("Record"));
+//		System.out.println(mapper.readValue(record, SerializationRecordCheck.class));
+//		System.out.println(record);
 
 	}
 

@@ -19,10 +19,7 @@ package org.przybyl.ddj16.records.s3_serialization;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-record SerializationRecordCheck(@JsonProperty String justOneField) implements Serializable {
-    @java.beans.ConstructorProperties("justOneField")
+record SerializationRecordCheck(/*@JsonProperty("justOneField")*/ String justOneField) implements Serializable {
 	public SerializationRecordCheck {
         System.out.printf("We're creating record for [%s]%n", justOneField);
     }

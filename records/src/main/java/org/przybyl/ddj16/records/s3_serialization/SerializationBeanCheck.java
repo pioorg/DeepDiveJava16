@@ -17,7 +17,7 @@
 
 package org.przybyl.ddj16.records.s3_serialization;
 
-import java.io.*;
+import java.io.Serializable;
 
 class SerializationBeanCheck implements Serializable {
 	@com.fasterxml.jackson.annotation.JsonProperty
