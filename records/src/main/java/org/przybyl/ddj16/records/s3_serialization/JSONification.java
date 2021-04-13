@@ -17,12 +17,8 @@
 
 package org.przybyl.ddj16.records.s3_serialization;
 
-import java.util.*;
-import java.util.stream.*;
-
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JSONification {
 	public static void main(String[] args) throws JsonProcessingException {
@@ -32,25 +28,10 @@ public class JSONification {
 		System.out.println(mapper.readValue(bean, SerializationBeanCheck.class));
 		System.out.println(bean);
 
-//		String record = mapper.writeValueAsString(new SerializationRecordCheck("Record"));
-//		System.out.println(mapper.readValue(record, SerializationRecordCheck.class));
-//		System.out.println(record);
+		String record = mapper.writeValueAsString(new SerializationRecordCheck("Record"));
+		System.out.println(mapper.readValue(record, SerializationRecordCheck.class));
+		System.out.println(record);
 
-//		reflectiveExamination(SerializationBeanCheck.class);
-//		reflectiveExamination(SerializationRecordCheck.class);
-	}
-
-	private static void reflectiveExamination(Class<?> klazz) {
-		System.out.println("Examining class "+ klazz.getCanonicalName());
-		Stream.of(
-			klazz.getRecordComponents(),
-			klazz.getDeclaredConstructors(),
-			klazz.getDeclaredFields(),
-			klazz.getDeclaredMethods())
-			.filter(Objects::nonNull)
-			.flatMap(Stream::of)
-			.filter(e -> e.isAnnotationPresent(JsonProperty.class))
-			.forEach(System.out::println);
 	}
 
 }

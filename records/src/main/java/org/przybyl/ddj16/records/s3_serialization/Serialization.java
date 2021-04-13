@@ -38,7 +38,7 @@ public class Serialization {
 	private static byte[] serialize(Object check) throws IOException {
 		byte[] bytez;
 		try (var baos = new ByteArrayOutputStream(); var out = new ObjectOutputStream(baos)) {
-			System.out.println("Serializing object %s".formatted(check));
+			System.out.printf("Serializing object %s%n", check);
 			out.writeObject(check);
 			bytez = baos.toByteArray();
 		}
@@ -49,12 +49,12 @@ public class Serialization {
 		try (var bais = new ByteArrayInputStream(bytez); var in = new ObjectInputStream(bais)) {
 			System.out.println("Deserializing object");
 			var loaded = in.readObject();
-			System.out.println("Deserialized %s".formatted(loaded));
+			System.out.printf("Deserialized %s%n", loaded);
 		}
 	}
 
 	private static void examineBytes(byte[] bytez) {
-		System.out.println("Stored bytes: %s".formatted(Arrays.toString(bytez)));
+		System.out.printf("Stored bytes: %s%n", Arrays.toString(bytez));
 		for (byte b : bytez) {
 			System.out.print((char)b);
 		}
